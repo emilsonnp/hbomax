@@ -107,14 +107,14 @@ main {
   display: flex;
   justify-content: space-around;
   gap: 80px;
-  margin: 40px 0;
+  margin: 20px 0;
   perspective: 2000px;
   perspective-origin: top;
 }
 
 .subscription__card {
   background: var(--card-bg-color);
-  padding: 40px 60px;
+  padding: 20px 20px;
   border-radius: 8px;
   display: flex;
   min-height: 600px;
@@ -132,7 +132,22 @@ main {
   .subscription__card:nth-child(1) {
   transform: rotateY(45deg);
 }
-
+.subscription__plans:has(.subscription__card:nth-child(1):hover)
+  .subscription__card:nth-child(3) {
+  transform: rotateY(-45deg);
+  }
+.subscription__plans:has(.subscription__card:nth-child(2):hover)
+  .subscription__card:nth-child(3) {
+  transform: rotateY(-45deg);
+  }
+  .subscription__plans:has(.subscription__card:nth-child(3):hover)
+  .subscription__card.subscription__card:nth-child(1) {
+  transform: rotateY(45deg);
+  }
+  .subscription__plans:has(.subscription__card:nth-child(3):hover)
+  .subscription__card.subscription__card:nth-child(2) {
+  transform: rotateY(45deg);
+}
 .subscription__description {
   text-align: left;
   list-style: none;
